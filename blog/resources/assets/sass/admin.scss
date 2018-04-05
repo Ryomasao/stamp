@@ -1,0 +1,29 @@
+// Variables
+@import "variables";
+@import "admin/header";
+@import "preview";
+
+html{
+    height:100%;
+}
+
+body{
+    height: 100%;
+    background-color: $body-bg;
+    //フッターをflexboxで固定する方法
+    display: flex;
+    flex-direction: column;
+    font-family: "Noto Sans Japanese";
+}
+
+.main{
+    //ヘッダーを固定しているのでその高さ分下に
+    margin-top:$header-height;
+    //フッターをflexboxで固定する方法
+    flex:1;
+}
+
+.footer{
+    height: 50px;
+    background:red;
+}

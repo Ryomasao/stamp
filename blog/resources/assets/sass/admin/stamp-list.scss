@@ -1,0 +1,51 @@
+@import "../variables";
+@import "../util/button";
+
+//stamp-list
+$stamp-bg: #2ab27b;
+$stamp-cl: #FFFFFF;
+
+.container{
+    margin:0 auto;
+    width: 90%;
+}
+
+.stamp-control{
+    width:100%;
+}
+
+.stamp-control-btn{
+    width: 80%;    
+    margin: 0 auto;
+    height: 40px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #bf5329;
+    color:white;
+    font-size:30px;
+    padding:10px;
+}
+
+.stamp-control-lnk{
+    text-decoration: none;
+    color:white;
+}
+
+
+.stamp-list{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stamp{
+    width: 200px;
+    height: 200px;
+    background-color:$stamp-bg;
+    margin:10px;
+    padding:10px;
+    color:$stamp-cl;
+    border-radius:3px;
+    font-size:20px;
+}

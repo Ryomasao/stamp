@@ -1,0 +1,11 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/admin.css": "/css/admin.css",
+    "/css/admin/stamp-list.css": "/css/admin/stamp-list.css",
+    "/css/admin/stamp-create.css": "/css/admin/stamp-create.css",
+    "/css/guest.css": "/css/guest.css",
+    "/js/admin/froala.js": "/js/admin/froala.js",
+    "/js/admin/prot.js": "/js/admin/prot.js",
+    "/js/guest/stamps.js": "/js/guest/stamps.js",
+    "/js/admin/stamps.js": "/js/admin/stamps.js"
+}

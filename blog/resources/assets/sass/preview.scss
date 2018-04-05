@@ -1,0 +1,23 @@
+
+.preview{
+    margin:10px 0;
+    &-header{
+        width:400px;
+        min-height:50px;
+        border: 1px dashed;
+    }
+
+    &-content{
+        margin-top:10px;
+        width:400px;
+        min-height: 300px;
+        border: 1px dashed white;
+    }
+
+    &-footer{
+        margin-top:10px;
+        width:400px;
+        min-height:50px;
+        border: 1px dashed;
+    }
+}

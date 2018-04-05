@@ -1,0 +1,31 @@
+// Variables
+@import "variables";
+@import "preview";
+
+html{
+    min-height:100%;
+    position: relative;
+}
+
+body{
+    margin-bottom:5em;
+}
+
+.header{
+    height: 30px;
+    background: #EABEBF;
+}
+
+.container{
+    margin-top:30px;
+}
+
+
+
+.footer{
+    position: absolute;    
+    bottom:0;
+    height: 5em;
+    width: 100%;
+    padding:0;
+}

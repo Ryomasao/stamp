@@ -1,0 +1,80 @@
+@import "../variables";
+@import "../util/button";
+
+//stamp-list
+$stamp-bg: #2ab27b;
+$stamp-cl: #FFFFFF;
+
+.container{
+    margin:0 auto;
+    width: 90%;
+}
+
+
+.stamp-create-two-column{
+    display: flex;
+}
+
+
+.stamp-create{
+    width:80%;
+    margin:0 auto;
+
+    &-field{
+        margin-top:10px;
+    }
+}
+
+.simple-form{
+    &-title{
+
+    }
+
+    &-control{
+
+    }
+
+    &-input{
+        border: 1px solid $form-border-color;
+        border-radius: 3px;
+        height: 50px;
+        width: 50%;
+    }
+
+    &-textarea{
+        border: 1px solid $form-border-color;
+        border-radius: 3px;
+        height: 200px;
+        width: 80%;
+    }
+}
+
+.stamp-preview{
+    width:375px;
+    height:667px;
+    border:1px dashed black;
+    margin-left:10px;
+    display: flex;
+    flex-direction: column;
+
+    &-header{
+        min-height: 100px;
+        border-bottom:1px dashed black;
+
+        & > p{
+            margin:0px;
+        }
+    }
+
+    &-content{
+        flex:1;
+    }
+
+    &-footer{
+        min-height: 100px;
+    }
+}
+
+.vue-editor-wrapper{
+    width: 80%;
+}
