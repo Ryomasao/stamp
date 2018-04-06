@@ -24,7 +24,7 @@ let initColor = {
   }
 
 const stapms = new Vue({
-    el: '.stamp-create-two-column',
+    el: '.stamp-create-column',
     data:{
         //ヘッダーの背景色
         headerColors:initColor,
@@ -54,10 +54,6 @@ const stapms = new Vue({
         headerContent:'',
         //フッターのコンテンツ
         footerContent:'',
-        //アップロード済みイメージメニューの表示制御
-        isShowUpImages:false,
-        //アップロード済みイメージのURL
-        upImages:[],
         //froalaの初期設定
         config:{
             placeholderText:'コンテンツの内容を記載',
@@ -115,11 +111,30 @@ const stapms = new Vue({
         'drop-down': Dropdown,
     },
     mounted:function(){
+    }
+});
+
+
+const editBar = new Vue({
+    el:'.edit-bar',
+    data:{
+        //アップロード済みイメージメニューの表示制御
+        isShowUpImages:false,
+        //アップロード済みイメージのURL
+        upImages:[],
+        //イメージアップロード用API
+        imageUploadApi:'/admin/images',
+    },
+    methods:{
+
+    },
+    components:{
+        'drop-down': Dropdown,
+    },
+    mounted:function(){
         this.upImages = [
             'https://s3-ap-northeast-1.amazonaws.com/dimpbt-s3-00/admin/img/not-stamped.png',
             'https://s3-ap-northeast-1.amazonaws.com/dimpbt-s3-00/admin/img/pig.png'
         ]
     }
-});
-
-
+})

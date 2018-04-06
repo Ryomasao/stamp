@@ -35,7 +35,7 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         //imageをアップロードする
-        $path = $request->file('image')->store('images');
+        $path = $request->file('image')->store('stamps/stapmp', 's3');
 
         return $path;
     }

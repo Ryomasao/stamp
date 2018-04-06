@@ -3,12 +3,10 @@
 @section('title', 'Page Title')
     <link rel="stylesheet" type="text/css" href="/css/admin/stamp-create.css">
 @section('content')
-    <div class="stamp-create-two-column">
+    <div class="stamp-create-column">
         <div class="stamp-create">
             <form @submit.prevent="onSubmit">
-                <p>サンプルヘッダ:https://s3-ap-northeast-1.amazonaws.com/dimpbt-s3-00/admin/img/pig-header.png</p>
-                <p>サンプルスタンプ(未押下時):https://s3-ap-northeast-1.amazonaws.com/dimpbt-s3-00/admin/img/not-stamped.png</p>
-                <p>サンプルスタンプ(押下時):https://s3-ap-northeast-1.amazonaws.com/dimpbt-s3-00/admin/img/pig.png</p>
+                <!--編集機能-->
                 <div class="stamp-create-field simple-form">
                     <label class="simple-form-title">ヘッダーの背景色</label>
                        <div class="simple-form-control">
@@ -50,8 +48,6 @@
                 </div>
                 <!---->
                 <div class="stamp-create-field simple-form">
-                    <button type="button" @click="isShowUpImages = true">アップロード済みのスタンプ</button>
-                    <drop-down v-if="isShowUpImages" :images="upImages" @close="isShowUpImages = false"></drop-down>
                     <label class="simple-form-title">未押下時のスタンプ</label>
                     <input type="text" v-model="notStampImage">
                 </div>
@@ -91,10 +87,20 @@
               <button type="submit" class="button is-link">登録する</button>
             </form>
         </div>
+        <!-- スタンプのプレビュー画像-->
         <div class="stamp-preview">
            <div class="stamp-preview-header" v-html="headerContent" :style="headerBg"></div>
            <stamp-component class="stamp-preview-content" :quantity="quantity" :body-style="bodyBg" :stamped-image="stampImage" :not-stamped-image="notStampImage"></stamp-component>
            <div class="stamp-preview-footer" v-html="footerContent" :style="footerBg"></div>
+        </div>
+    </div>
+    <!-- 編集バー -->
+    <div class="edit-bar">
+        <div class="edit-bar-icons">
+            <div class="edit-bar-icon" @click="isShowUpImages = true">
+                <i class="far fa-file-image fa-2x" ></i>
+                <drop-down v-if="isShowUpImages" :images="upImages" @close="isShowUpImages = false" :post-to="imageUploadApi"></drop-down>
+            </div>
         </div>
     </div>
 @endsection

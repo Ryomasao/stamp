@@ -4,6 +4,8 @@
 //stamp-list
 $stamp-bg: #2ab27b;
 $stamp-cl: #FFFFFF;
+$edit-bar-cl:#FFFFFF;
+
 
 .container{
     margin:0 auto;
@@ -11,7 +13,7 @@ $stamp-cl: #FFFFFF;
 }
 
 
-.stamp-create-two-column{
+.stamp-create-column{
     display: flex;
 }
 
@@ -77,4 +79,26 @@ $stamp-cl: #FFFFFF;
 
 .vue-editor-wrapper{
     width: 80%;
+}
+
+.edit-bar{
+    position: fixed;
+    top:0;
+    right:0;
+    min-width:80px;
+    height: 100%;
+    background-color:$edit-bar-cl;
+    z-index:0;
+
+    &-icons{
+        margin-top:100px;
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+    }
+
+    &-icon{
+        position:relative;
+        margin: 10px auto;
+    }
 }

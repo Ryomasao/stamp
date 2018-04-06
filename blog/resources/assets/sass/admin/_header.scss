@@ -2,6 +2,7 @@
 @import "side-menu";
 
 .header{
+    z-index:100;
     min-height: $header-height;
     background-color: $header-bg;
     color:#FFFFFF;

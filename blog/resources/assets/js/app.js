@@ -16,4 +16,3 @@ window.Vue = require('vue');
  */
 
 Vue.component('stamp-component', require('./components/StampComponent.vue'));
-Vue.component('drop-down', require('./components/DropdownComponent.vue'));
