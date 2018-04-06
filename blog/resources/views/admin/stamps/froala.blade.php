@@ -50,6 +50,8 @@
                 </div>
                 <!---->
                 <div class="stamp-create-field simple-form">
+                    <button type="button" @click="isShowUpImages = true">アップロード済みのスタンプ</button>
+                    <drop-down v-if="isShowUpImages" :images="upImages" @close="isShowUpImages = false"></drop-down>
                     <label class="simple-form-title">未押下時のスタンプ</label>
                     <input type="text" v-model="notStampImage">
                 </div>

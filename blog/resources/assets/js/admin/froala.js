@@ -9,9 +9,12 @@ require('froala-editor/js/languages/ja')
 
 import VueFroala from 'vue-froala-wysiwyg';
 import { Photoshop } from 'vue-color'
+import Dropdown  from '../components/DropdownComponent';
 
 Vue.use(VueFroala)
 
+//カラー設定の初期設定
+//photshopコンポーネントの設定例
 let initColor = {
     hex: '#194d33',
     hsl: { h: 150, s: 0.5, l: 0.2, a: 1 },
@@ -23,20 +26,39 @@ let initColor = {
 const stapms = new Vue({
     el: '.stamp-create-two-column',
     data:{
+        //ヘッダーの背景色
         headerColors:initColor,
+        //ヘッダーの背景画像
         headerImage:'',
-        bodyImage:'',
-        footerImage:'',
-        stampImage:'',
-        notStampImage:'',
+        //スタンプの背景色
         bodyColors:initColor,
+        //スタンプの背景画像
+        bodyImage:'',
+        //スタンプ押下時のイメージ
+        stampImage:'',
+        //スタンプ未押下時のイメージ
+        notStampImage:'',
+        //フッターの背景色
         footerColors:initColor,
+        //フッターの背景画像
+        footerImage:'',
+        //ヘッダーのカラーピッカーの表示制御
         isPicker:false,
+        //スタンプのカラーピッカーの表示制御
         isBodyPicker:false,
+        //フッターのカラーピッカーの表示制御
         isFooterPicker:false,
+        //スタンプの数、この配列の要素分v-forでまわしてる
         quantity:[],
+        //ヘッダーのコンテンツ
         headerContent:'',
+        //フッターのコンテンツ
         footerContent:'',
+        //アップロード済みイメージメニューの表示制御
+        isShowUpImages:false,
+        //アップロード済みイメージのURL
+        upImages:[],
+        //froalaの初期設定
         config:{
             placeholderText:'コンテンツの内容を記載',
             language: 'ja',
@@ -45,7 +67,7 @@ const stapms = new Vue({
             //toolbarButtons: ['bold'],
             events: {
                 'froalaEditor.initialized': function () {
-                  console.log('initialized')
+                  console.log('initialized froala');
                 }
             }
         },
@@ -89,9 +111,14 @@ const stapms = new Vue({
         }
     },
     components:{
-        'photoshop-picker': Photoshop
+        'photoshop-picker': Photoshop,
+        'drop-down': Dropdown,
     },
     mounted:function(){
+        this.upImages = [
+            'https://s3-ap-northeast-1.amazonaws.com/dimpbt-s3-00/admin/img/not-stamped.png',
+            'https://s3-ap-northeast-1.amazonaws.com/dimpbt-s3-00/admin/img/pig.png'
+        ]
     }
 });
 
